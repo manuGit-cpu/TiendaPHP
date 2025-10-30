@@ -12,7 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($contrasena !== $contrasena_repetida) {
         $echo = " Las contraseñas no coinciden.";
         return;
-    }
+    }    
+    if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}[A-Za-z\d]$/", $contrasena)) {
+        $echo = "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula y un número, y terminar con una letra o número.";
+        return;
+    } 
 
     $stmt = $conexion->prepare("SELECT 1 FROM usuarios WHERE usuario = ?");
     $stmt->bindParam(1, $usuario);

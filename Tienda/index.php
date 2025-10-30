@@ -15,7 +15,7 @@
             <input type="text" name="usuario" placeholder="Usuario" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
             <button type="submit">Iniciar Sesión</button>
-            <button onclick="window.location.href='./registro.php'">Registrarse</button>
+            <button type="button" onclick="window.location.href='./registro.php'" >Registrarse</button>
             <?php
             echo $aviso;
             ?>

@@ -24,7 +24,5 @@
         }else{
             $aviso = "Se ha introducido mal los credenciales";
         }
-
-
     }
 ?>

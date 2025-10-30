@@ -1,6 +1,6 @@
 <?php
     $usuario = "root";
-    $contraseña = "T9z!XVbMHCXrK7QF";
+    $contraseña = "admin";
     $baseDeDatos="mysql:host=localhost;dbname=tienda";
 
     try {

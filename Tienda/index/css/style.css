@@ -1,56 +1,107 @@
+/* === ESTILO GENERAL === */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e0e0e0;
+    background-color: #e3e3e3;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+}
 
+/* Contenedor principal */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* === FORMULARIO DE LOGIN === */
+form {
+    background-color: #f9f9f9;
+    width: 380px;
+    max-width: 90%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Inputs */
+form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fffbe7;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #5a5aed;
+    box-shadow: 0 0 6px rgba(90, 90, 237, 0.6);
+}
+
+/* Botón "Iniciar sesión" */
+form button {
+    border: none;
+    border-radius: 10px;
+    background-color: #5a5aed;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+form button:hover {
+    background-color: #4949d4;
+    transform: scale(0.98);
+}
+
+#container > button {
+    border: none;
+    border-radius: 10px;
+    background-color: #4caf50;
+    color: white;
+    width: 380px;
+    max-width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#container > button:hover {
+    background-color: #43a047;
+    transform: scale(0.98);
+}
+
+/* === RESPONSIVE (móviles) === */
+@media (max-width: 480px) {
     form {
-        background-color: #f0f0f0;
-        width: 400px;
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        border-radius: 15px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        width: 90%;
+    }
 
-        input {
-            box-sizing: border-box;
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            font-size: 16px;
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    form input,
+    #container > button {
+        font-size: 15px;
+        padding: 10px;
+    }
 
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 5px rgba(78, 78, 239, 0.7);
-            }
-        }
-
-        button {
-            box-sizing: border-box;
-            border: none;
-            border-radius: 10px;
-            background-color: rgb(78, 78, 239);
-            color: white;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s ease;
-
-            &:hover {
-                background-color: rgb(58, 58, 219);
-                transform: scale(0.98);
-            }
-        }
+    form button {
+        font-size: 15px;
     }
 }
