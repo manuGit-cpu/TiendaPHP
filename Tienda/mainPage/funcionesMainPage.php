@@ -18,16 +18,23 @@ function comprarProducto()
 
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $codigo = $_POST['codigo'];
-        $cantidad = $_POST['cantidad'];
+        $cantidad = (int)$_POST['cantidad'];
 
-        $stmt = $conexion->prepare("SELECT * FROM productos WHERE codigo = ?");
+        $stmt = $conexion->prepare("UPDATE productos SET stock = stock - ? WHERE codigo = ? ");
 
-        $stmt->execute([$codigo]);
+        $stmt->bindParam(1,$cantidad);
+        $stmt->bindParam(2,$codigo);
 
-        $producto= $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->execute();
 
-
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit;
     }
+}
+
+
+if (isset($_POST["btn-compra"])) {
+    comprarProducto();
 }
 
 ?>

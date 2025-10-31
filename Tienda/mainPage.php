@@ -44,7 +44,7 @@ $productos = obtenerProductos();
                                 <input type="hidden" name="precio" value="<?= htmlspecialchars($fila['precio']); ?>">
                                 <input type="number" hidden name="cantidad" min="1"
                                     max="<?= htmlspecialchars($fila['stock']); ?>" value="1">
-                                <button type="submit" class="btn-comprar">Comprar</button>
+                                <button type="submit" class="btn-comprar" name="btn-compra">Comprar</button>
                             </form>
                         </td>
                     </tr>
