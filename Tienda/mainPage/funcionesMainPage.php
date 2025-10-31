@@ -12,10 +12,22 @@ function obtenerProductos()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-    // function comprarProducto(){
-    //     if () {
-    //         # code...
-    //     }
-    // }
+function comprarProducto()
+{
+    global $conexion;
+
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+        $codigo = $_POST['codigo'];
+        $cantidad = $_POST['cantidad'];
+
+        $stmt = $conexion->prepare("SELECT * FROM productos WHERE codigo = ?");
+
+        $stmt->execute([$codigo]);
+
+        $producto= $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    }
+}
 
 ?>

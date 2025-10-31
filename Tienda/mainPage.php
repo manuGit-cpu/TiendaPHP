@@ -39,11 +39,11 @@ $productos = obtenerProductos();
                                 max="<?= htmlspecialchars($fila['stock']); ?>" value="1" class="input-cantidad">
                         </td>
                         <td>
-                            <form method="POST" action="" >
+                            <form method="POST" action="">
                                 <input type="hidden" name="codigo" value="<?= htmlspecialchars($fila['codigo']); ?>">
                                 <input type="hidden" name="precio" value="<?= htmlspecialchars($fila['precio']); ?>">
-                                <input type="number" hidden name="cantidad" min="1" max="<?= htmlspecialchars($fila['stock']); ?>"
-                                    value="1" class="input-cantidad">
+                                <input type="number" hidden name="cantidad" min="1"
+                                    max="<?= htmlspecialchars($fila['stock']); ?>" value="1">
                                 <button type="submit" class="btn-comprar">Comprar</button>
                             </form>
                         </td>
