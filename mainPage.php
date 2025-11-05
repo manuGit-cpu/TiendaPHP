@@ -19,16 +19,9 @@ $productos = obtenerProductos();
     <span class="brand-mark">🛍️</span> Mi Tienda
   </a>
 
-  <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">
-    <!-- Ícono hamburguesa -->
-    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </button>
-
   <nav class="nav-menu" data-state="closed">
-    <a href="index.php">Inicio</a>
-    <a href="catalogo.php" aria-current="page">Catálogo</a>
+    <a href="#" aria-current="page">Inicio</a>
+    <a href="catalogo.php" >Catálogo</a>
     <a href="ofertas.php">Ofertas</a>
     <a href="contacto.php">Contacto</a>
   </nav>
