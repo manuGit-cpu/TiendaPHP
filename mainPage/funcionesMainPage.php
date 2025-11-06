@@ -63,6 +63,11 @@ function añadirVenta()
 
 
 if (isset($_POST["btn-compra"])) {
+
+    if (!isset($_SESSION['id'])) {
+        header('Location: ./index.php', true, 303);
+    }
+    
     añadirVenta();
     comprarProducto();
     header("Location: " . $_SERVER['PHP_SELF']);

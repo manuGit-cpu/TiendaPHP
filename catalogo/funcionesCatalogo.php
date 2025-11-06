@@ -1,0 +1,54 @@
+<?php
+require_once "./conexion/conexionDB.php";
+function borrarProducto()
+{
+    global $conexion;
+
+    $stmt = $conexion->prepare("DELETE FROM productos WHERE codigo = ?");
+
+    $stmt->bindParam(1, $_POST['codigo']);
+
+    $stmt->execute();
+}
+;
+
+function editarProducto()
+{
+    return $_POST['codigo'];
+}
+
+function actualizarProducto()
+{
+    global $conexion;
+
+    $stmt = $conexion->prepare("UPDATE productos SET descripcion = ?, precio = ?, stock = ? WHERE codigo = ?");
+    $stmt->bindParam(1, $_POST['descripcion']);
+    $stmt->bindParam(2, $_POST['precio']);
+    $stmt->bindParam(3, $_POST['stock']);
+    $stmt->bindParam(4, $_POST['codigo']);
+    $stmt->execute();
+}
+;
+
+switch (true) {
+    case isset($_POST['btn-borrar']):
+        borrarProducto();
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    case isset($_POST['btn-editar']):
+        $codigoEditando = editarProducto();
+        break;
+    case isset($_POST['btn-guardar']):
+        actualizarProducto();
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    case isset($_POST['btn-cancelar']):
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    default:
+        $codigoEditando = null;
+        break;
+}
+
+
+?>
