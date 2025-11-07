@@ -394,3 +394,73 @@ main:hover {
         padding: 5px 8px;
     }
 }
+
+/* ======= FORMULARIO INSERTAR PRODUCTO ======= */
+.insertar-producto {
+    background-color: #2c2f35;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.insertar-producto h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.form-insertar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    color: #ddd;
+}
+
+.campo input {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: #3a3d44;
+    color: #fff;
+}
+
+.btn-insertar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-insertar:hover {
+    background-color: #218838;
+}
+
+/* ======= MENSAJES ======= */
+.mensaje-exito {
+    color: #28a745;
+    background: #1e2e1e;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.mensaje-error {
+    color: #dc3545;
+    background: #2a1e1e;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}

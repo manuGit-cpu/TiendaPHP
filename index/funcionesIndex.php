@@ -18,7 +18,8 @@
 
         if($fila && password_verify($contrasena,$fila['password'])){
             $_SESSION['id'] = $fila['id']; 
-            $_SESSION['usuario'] = $fila['usuario']; 
+            $_SESSION['usuario'] = $fila['usuario'];
+            $_SESSION['rol'] = $fila['rol'];
             header('Location: ./mainPage.php', true, 303);
             exit;
         }else{

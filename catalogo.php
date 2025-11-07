@@ -16,6 +16,23 @@ $codigoEditando = $_POST['codigo'] ?? null;
 
 <body>
     <main>
+        <section class="insertar-producto">
+            <h2>Insertar producto o aumentar stock</h2>
+            <form method="POST" action="catalogo.php" class="form-insertar">
+                <div class="campo">
+                    <label for="codigo">Código del producto</label>
+                    <input type="text" id="codigo" name="codigo" placeholder="Ej: P001" required>
+                </div>
+                <div class="campo">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" id="cantidad" name="cantidad" placeholder="Ej: 10" required min="1">
+                </div>
+                <div class="acciones">
+                    <button type="submit" name="btn-insertar" class="btn-insertar">Añadir al stock</button>
+                </div>
+            </form>
+            <?= $mensaje ?? '' ?>
+        </section>
         <table class="tabla-productos">
             <thead>
                 <tr>
