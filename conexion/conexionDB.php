@@ -10,7 +10,8 @@
 
         
     } catch (\Throwable $th) {
-        //throw $th;
+        header("Location: ./noConexion.php");
     }
+
 
 ?>
