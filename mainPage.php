@@ -21,9 +21,16 @@ $productos = obtenerProductos();
 
         <nav class="nav-menu" data-state="closed">
             <a href="#" aria-current="page">Inicio</a>
-            <a href="catalogo.php">Catálogo</a>
-            <a href="ofertas.php">Ofertas</a>
-            <a href="contacto.php">Contacto</a>
+            <?php 
+            session_start();
+            if ($_SESSION['rol'] == 'usuario') {
+
+            } else {
+                ?>
+                <a href="catalogo.php">Catálogo</a>
+            <?php
+            }
+            ?>
         </nav>
 
         <a href="perfil.php" class="profile-link" aria-label="Ir a tu perfil">
