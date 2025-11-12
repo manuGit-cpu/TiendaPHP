@@ -21,14 +21,14 @@ $productos = obtenerProductos();
 
         <nav class="nav-menu" data-state="closed">
             <a href="#" aria-current="page">Inicio</a>
-            <?php 
+            <?php
             session_start();
             if ($_SESSION['rol'] == 'usuario') {
 
             } else {
                 ?>
                 <a href="catalogo.php">Catálogo</a>
-            <?php
+                <?php
             }
             ?>
         </nav>
