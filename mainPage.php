@@ -83,6 +83,43 @@ $productos = obtenerProductos();
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <div class="contenedor-ultima-venta">
+
+            <form action="" method="post">
+                <button class="btn-mostrar-cookie" name="mostrarCookie">
+                    Mostrar última venta
+                </button>
+            </form>
+
+            <?php if (isset($_POST['mostrarCookie'])): ?>
+                <?php foreach (mostrarUltimaVenta() as $key): ?>
+
+                    <table class="tabla-ultima-venta">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Descripción</th>
+                                <th>Precio (€)</th>
+                                <th>Stock</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><?= htmlspecialchars($key['codigo']) ?></td>
+                                <td><?= htmlspecialchars($key['descripcion']) ?></td>
+                                <td><?= number_format($key['precio'], 2, ',', '.') ?> €</td>
+                                <td><?= htmlspecialchars($key['stock']) ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+        </div>
+
     </main>
 </body>
 

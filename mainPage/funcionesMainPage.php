@@ -57,10 +57,35 @@ function añadirVenta()
     } catch (\Throwable $th) {
         die();
     }
+}
 
+function ultimaVenta(){
+
+    $codigo = $_POST['codigo'];
+
+    setcookie('lastSell',value: $codigo);
 
 }
 
+function mostrarUltimaVenta(){
+    
+    if (!isset($_COOKIE['lastSell'])) {
+        return;
+    }
+    $venta = $_COOKIE['lastSell'];
+
+    global $conexion;
+
+    $stmt = $conexion->prepare('SELECT * FROM productos WHERE codigo = ?');
+
+    $stmt->bindParam(1,$venta);
+
+    $stmt->execute();
+
+    $cookie = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $cookie;
+}
 
 if (isset($_POST["btn-compra"])) {
 
@@ -70,8 +95,13 @@ if (isset($_POST["btn-compra"])) {
     
     añadirVenta();
     comprarProducto();
+    ultimaVenta();
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
+}
+
+if (isset($_POST['mostrarCookie'])) {
+    
 }
 
 ?>
